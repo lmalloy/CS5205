@@ -1,0 +1,957 @@
+###############################################################################
+#
+# IAR ELF Linker V8.32.3.193/W32 for ARM                  29/Apr/2019  23:54:05
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Exe\Project-STM32F4xx-Nucleo.out
+#    Map file     =  
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\List\Project-STM32F4xx-Nucleo.map
+#    Command line =  
+#        -f C:\Users\mallo\AppData\Local\Temp\EW8C68.tmp
+#        (C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\cmsis_os.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\config_bus.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\croutine.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\event_groups.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\gnss_data.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\gnss_fw_upgrade.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\gnss_if.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\gnss_parser.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\gnss_utils.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\heap_4.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\list.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\main.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\NMEA_parser.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\port.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\portasm.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\queue.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\startup_stm32f401xe.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_cortex.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_dma.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_flash.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_flash_ex.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_flash_ramfunc.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_gpio.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_i2c.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_msp.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_pwr.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_pwr_ex.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_rcc.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_rcc_ex.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_tim.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_tim_ex.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_hal_uart.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_it.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\stm32f4xx_nucleo.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\system_stm32f4xx.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\tasks.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\teseo_i2c.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\teseo_io.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\teseo_queue.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\teseo_uart.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\timers.o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj\x_nucleo_gnss1a1.o
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull
+#        --no_out_extension -o
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Exe\Project-STM32F4xx-Nucleo.out
+#        --map
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\List\Project-STM32F4xx-Nucleo.map
+#        --config
+#        C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\stm32f401xe_flash.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x807'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2001'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x194
+  .intvec            ro code   0x800'0000   0x194  startup_stm32f401xe.o [1]
+                             - 0x800'0194   0x194
+
+"P1":                                      0xa9d2
+  .text              ro code   0x800'0194  0x155c  NMEA_parser.o [1]
+  .text              ro code   0x800'16f0     0x6  ABImemclr4.o [4]
+  .text              ro code   0x800'16f6    0x7a  lz77_init_single.o [4]
+  .text              ro code   0x800'1770     0x6  ABImemclr.o [4]
+  .text              ro code   0x800'1776    0x3a  zero_init3.o [4]
+  .text              ro code   0x800'17b0    0x12  strcmp.o [4]
+  .text              ro code   0x800'17c2    0x86  iar_Stolx.o [2]
+  .text              ro code   0x800'1848     0xe  math_wrappers64.o [3]
+  .text              ro code   0x800'1856    0x1e  xencoding_8859_1.o [2]
+  .text              ro code   0x800'1874   0x380  strto32.o [3]
+  .text              ro code   0x800'1bf4    0x48  FltToDbl.o [3]
+  .text              ro code   0x800'1c3c    0x1e  strncpy_small.o [4]
+  .text              ro code   0x800'1c5a    0x1a  xsnprout.o [2]
+  .text              ro code   0x800'1c74    0x32  ABImemset48.o [4]
+  .text              ro code   0x800'1ca6     0xa  xsprout.o [2]
+  .text              ro code   0x800'1cb0    0x12  ABImemset_small.o [4]
+  .text              ro code   0x800'1cc2    0x14  isspace.o [2]
+  .text              ro code   0x800'1cd8   0x152  iar_Stoulx.o [2]
+  .text              ro code   0x800'1e2c   0x51a  strto64.o [3]
+  .text              ro code   0x800'2348    0x48  frexpf.o [3]
+  .text              ro code   0x800'2390    0xc4  ldexpf.o [3]
+  .text              ro code   0x800'2454   0x122  iar_Stopfx.o [2]
+  .text              ro code   0x800'2578   0x1c4  iar_Stoflt.o [2]
+  .text              ro code   0x800'273c   0x21c  iar_Stoxflt.o [2]
+  .text              ro code   0x800'2958    0xb4  xlocale_c.o [2]
+  .text              ro code   0x800'2a0c    0x14  tolower.o [2]
+  .text              ro code   0x800'2a20    0x58  memchr.o [4]
+  .text              ro code   0x800'2a78    0x70  frexp.o [3]
+  .text              ro code   0x800'2ae8   0x1a2  DblMul.o [3]
+  .text              ro code   0x800'2c8c   0x13a  ldexp.o [3]
+  .text              ro code   0x800'2dc8   0x246  DblDiv.o [3]
+  .text              ro code   0x800'3010    0x22  S32ToDbl.o [3]
+  .text              ro code   0x800'3034   0x17a  DblAdd.o [3]
+  .text              ro code   0x800'31ae    0x14  isalpha.o [2]
+  .text              ro code   0x800'31c4    0xe2  DblSub.o [3]
+  .text              ro code   0x800'32a8  0x119c  gnss_data.o [1]
+  .text              ro code   0x800'4444    0xa0  gnss_if.o [1]
+  .text              ro code   0x800'44e4    0x14  strlen_small.o [4]
+  .text              ro code   0x800'44f8    0x44  snprintf.o [2]
+  .text              ro code   0x800'453c    0x18  ABImemcpy_small.o [4]
+  .text              ro code   0x800'4554    0x3a  DblToS32.o [3]
+  .text              ro code   0x800'4590   0x1bc  fmod.o [3]
+  .text              ro code   0x800'474c    0x28  stm32f4xx_hal.o [1]
+  .text              ro code   0x800'4774   0x1c0  x_nucleo_gnss1a1.o [1]
+  .text              ro code   0x800'4934   0x120  cmsis_os.o [1]
+  .text              ro code   0x800'4a54   0xf46  xprintffull.o [2]
+  .text              ro code   0x800'599c     0xc  stm32f4xx_hal.o [1]
+  .text              ro code   0x800'59a8   0x684  stm32f4xx_hal_uart.o [1]
+  .text              ro code   0x800'602c   0x294  stm32f4xx_hal_gpio.o [1]
+  .text              ro code   0x800'62c0    0xc8  config_bus.o [1]
+  .text              ro code   0x800'6388   0x8a0  tasks.o [1]
+  .text              ro code   0x800'6c28   0x5ac  queue.o [1]
+  .text              ro code   0x800'71d4   0x1d8  port.o [1]
+  .text              ro code   0x800'73ac    0x16  strchr.o [4]
+  .text              ro code   0x800'73c4    0x40  xfail_s.o [2]
+  .text              ro code   0x800'7404     0xa  xmbcurmax.o [2]
+  .text              ro code   0x800'7410   0x106  I64DivMod_small.o [4]
+  .text              ro code   0x800'7518    0x2e  DblCmpLe.o [3]
+  .text              ro code   0x800'7548    0x2e  DblCmpGe.o [3]
+  .text              ro code   0x800'7578    0x28  DblToU32.o [3]
+  .text              ro code   0x800'75a0    0x1a  U32ToDbl.o [3]
+  .text              ro code   0x800'75bc   0x1dc  stm32f4xx_hal_msp.o [1]
+  .text              ro code   0x800'7798    0x24  stm32f4xx_hal_dma.o [1]
+  .text              ro code   0x800'77bc     0x2  stm32f4xx_hal_uart.o [1]
+  .text              ro code   0x800'77c0   0x1ac  stm32f4xx_hal_rcc.o [1]
+  .text              ro code   0x800'796c   0x27c  stm32f4xx_hal_i2c.o [1]
+  .text              ro code   0x800'7be8   0x818  main.o [1]
+  .text              ro code   0x800'8400   0x1b4  heap_4.o [1]
+  .text              ro code   0x800'85b4    0x90  list.o [1]
+  CODE               ro code   0x800'8644    0xa8  portasm.o [1]
+  .text              ro code   0x800'86ec     0x6  abort.o [2]
+  .text              ro code   0x800'86f4     0x2  I64DivZer.o [4]
+  .text              ro code   0x800'86f8    0xe8  stm32f4xx_hal_cortex.o [1]
+  .text              ro code   0x800'87e0    0x40  stm32f4xx_hal.o [1]
+  .text              ro code   0x800'8820    0x34  stm32f4xx_hal.o [1]
+  .text              ro code   0x800'8854   0x2f8  stm32f4xx_hal_rcc.o [1]
+  .text              ro code   0x800'8b4c   0x1c6  gnss_parser.o [1]
+  .text              ro code   0x800'8d14   0x260  gnss_utils.o [1]
+  .text              ro code   0x800'8f74   0x480  gnss_fw_upgrade.o [1]
+  .text              ro code   0x800'93f4    0x40  sprintf.o [2]
+  .text              ro code   0x800'9434    0x28  strncmp.o [2]
+  .text              ro code   0x800'945c    0x14  exit.o [5]
+  .rodata            const     0x800'9470   0x6b8  gnss_utils.o [1]
+  .rodata            const     0x800'9b28   0x2c0  main.o [1]
+  .rodata            const     0x800'9de8   0x278  gnss_data.o [1]
+  .text              ro code   0x800'a060   0x210  teseo_queue.o [1]
+  .text              ro code   0x800'a270   0x1c4  teseo_i2c.o [1]
+  .rodata            const     0x800'a434   0x140  gnss_data.o [1]
+  .text              ro code   0x800'a574   0x134  teseo_uart.o [1]
+  .text              ro code   0x800'a6a8    0xda  teseo_io.o [1]
+  .text              ro code   0x800'a784    0x60  system_stm32f4xx.o [1]
+  .rodata            const     0x800'a7e4    0x50  iar_Stoulx.o [2]
+  .rodata            const     0x800'a838    0x48  strto64.o [3]
+  .rodata            const     0x800'a880    0x38  gnss_data.o [1]
+  .rodata            const     0x800'a8b8    0x28  main.o [1]
+  .text              ro code   0x800'a8e0    0x28  data_init.o [4]
+  .rodata            const     0x800'a908    0x24  gnss_data.o [1]
+  .text              ro code   0x800'a92c    0x24  stm32f4xx_it.o [1]
+  .text              ro code   0x800'a950    0x10  stm32f4xx_hal.o [1]
+  .text              ro code   0x800'a960    0x22  fpinit_M.o [3]
+  .iar.init_table    const     0x800'a984    0x20  - Linker created -
+  .text              ro code   0x800'a9a4    0x1e  cmain.o [4]
+  .text              ro code   0x800'a9c2     0x4  low_level_init.o [2]
+  .text              ro code   0x800'a9c6     0x4  exit.o [2]
+  .text              ro code   0x800'a9cc     0xa  cexit.o [4]
+  .text              ro code   0x800'a9d8    0x10  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'a9e8     0xc  cstartup_M.o [4]
+  .rodata            const     0x800'a9f4     0x8  system_stm32f4xx.o [1]
+  .rodata            const     0x800'a9fc     0x6  xlocale_c.o [2]
+  .text              ro code   0x800'aa02     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa06     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa0a     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa0e     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa12     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa16     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa1a     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa1e     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa22     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa26     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa2a     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa2e     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa32     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa36     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa3a     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa3e     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa42     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa46     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa4a     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa4e     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa52     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa56     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa5a     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa5e     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa62     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa66     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa6a     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa6e     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa72     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa76     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa7a     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa7e     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa82     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa86     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa8a     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa8e     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa92     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa96     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa9a     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aa9e     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aaa2     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aaa6     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aaaa     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aaae     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aab2     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aab6     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aaba     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aabe     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aac2     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aac6     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aaca     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aace     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aad2     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aad6     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aada     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aade     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aae2     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aae6     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aaea     0x4  startup_stm32f401xe.o [1]
+  .text              ro code   0x800'aaee     0x4  startup_stm32f401xe.o [1]
+  .rodata            const     0x800'aaf2     0x0  zero_init3.o [4]
+  .rodata            const     0x800'aaf2     0x0  lz77_init_single.o [4]
+  Initializer bytes  const     0x800'aaf2    0x74  <for P2-1>
+                             - 0x800'ab66  0xa9d2
+
+"P2", part 1 of 3:                           0xc8
+  P2-1                        0x2000'0000    0xc8  <Init block>
+    .data            inited   0x2000'0000     0xc  port.o [1]
+    .data            inited   0x2000'000c     0xc  stm32f4xx_hal.o [1]
+    .data            inited   0x2000'0018     0x4  system_stm32f4xx.o [1]
+    .data            inited   0x2000'001c    0x28  teseo_io.o [1]
+    .data            inited   0x2000'0044     0x4  teseo_queue.o [1]
+    .data            inited   0x2000'0048    0x38  xlocale_c.o [2]
+    .data            inited   0x2000'0080    0x48  xlocale_c.o [2]
+                            - 0x2000'00c8    0xc8
+
+"P2", part 2 of 3:                         0xa390
+  .bss               zero     0x2000'00c8  0x4000  gnss_fw_upgrade.o [1]
+  .bss               zero     0x2000'40c8  0x3c18  heap_4.o [1]
+  .bss               zero     0x2000'7ce0  0x1500  gnss_data.o [1]
+  .bss               zero     0x2000'91e0   0x900  NMEA_parser.o [1]
+  .bss               zero     0x2000'9ae0   0x3a8  main.o [1]
+  .bss               zero     0x2000'9e88   0x2d0  teseo_queue.o [1]
+  .bss               zero     0x2000'a158    0xa0  tasks.o [1]
+  .bss               zero     0x2000'a1f8    0x8c  tasks.o [1]
+  .bss               zero     0x2000'a284    0x5c  gnss_data.o [1]
+  .bss               zero     0x2000'a2e0    0x54  config_bus.o [1]
+  .bss               zero     0x2000'a334    0x40  config_bus.o [1]
+  .bss               zero     0x2000'a374    0x40  config_bus.o [1]
+  .bss               zero     0x2000'a3b4    0x40  gnss_fw_upgrade.o [1]
+  .bss               zero     0x2000'a3f4    0x28  teseo_i2c.o [1]
+  .bss               zero     0x2000'a41c    0x20  main.o [1]
+  .bss               zero     0x2000'a43c    0x10  teseo_uart.o [1]
+  .bss               zero     0x2000'a44c     0x8  x_nucleo_gnss1a1.o [1]
+  .bss               zero     0x2000'a454     0x4  xfail_s.o [2]
+                            - 0x2000'a458  0xa390
+
+"P2", part 3 of 3:                          0x400
+  CSTACK                      0x2000'a458   0x400  <Block>
+    CSTACK           uninit   0x2000'a458   0x400  <Block tail>
+                            - 0x2000'a858   0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'ab66   0x807'ffff  0x7'549a
+  0x2000'a858  0x2001'7fff    0xd7a8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0xa390:
+          0x2000'00c8  0xa390
+
+Copy/lz77 (__iar_lz77_init_single3)
+    1 source range, total size 0x74 (57% of destination):
+           0x800'aaf2    0x74
+    1 destination range, total size 0xc8:
+          0x2000'0000    0xc8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj: [1]
+    NMEA_parser.o             5 468             2 304
+    cmsis_os.o                  288
+    config_bus.o                200               212
+    gnss_data.o               4 508    1 044    5 468
+    gnss_fw_upgrade.o         1 152            16 448
+    gnss_if.o                   160
+    gnss_parser.o               454
+    gnss_utils.o                608    1 720
+    heap_4.o                    436            15 384
+    list.o                      144
+    main.o                    2 072      744      968
+    port.o                      472        6       12
+    portasm.o                   168
+    queue.o                   1 452
+    startup_stm32f401xe.o       660
+    stm32f4xx_hal.o             184        7       12
+    stm32f4xx_hal_cortex.o      232
+    stm32f4xx_hal_dma.o          36
+    stm32f4xx_hal_gpio.o        660
+    stm32f4xx_hal_i2c.o         636
+    stm32f4xx_hal_msp.o         476
+    stm32f4xx_hal_rcc.o       1 188
+    stm32f4xx_hal_uart.o      1 670
+    stm32f4xx_it.o               36
+    system_stm32f4xx.o           96       11        4
+    tasks.o                   2 208               300
+    teseo_i2c.o                 452                40
+    teseo_io.o                  218       23       40
+    teseo_queue.o               528        2      724
+    teseo_uart.o                308                16
+    x_nucleo_gnss1a1.o          448                 8
+    -------------------------------------------------
+    Total:                   27 618    3 557   41 940
+
+dl7M_tlf.a: [2]
+    abort.o                       6
+    exit.o                        4
+    iar_Stoflt.o                452
+    iar_Stolx.o                 134
+    iar_Stopfx.o                290
+    iar_Stoulx.o                338       80
+    iar_Stoxflt.o               540
+    isalpha.o                    20
+    isspace.o                    20
+    low_level_init.o              4
+    snprintf.o                   68
+    sprintf.o                    64
+    strncmp.o                    40
+    tolower.o                    20
+    xencoding_8859_1.o           30
+    xfail_s.o                    64                 4
+    xlocale_c.o                 180       80      128
+    xmbcurmax.o                  10
+    xprintffull.o             3 910
+    xsnprout.o                   26
+    xsprout.o                    10
+    -------------------------------------------------
+    Total:                    6 230      160      132
+
+m7M_tls.a: [3]
+    DblAdd.o                    378
+    DblCmpGe.o                   46
+    DblCmpLe.o                   46
+    DblDiv.o                    582
+    DblMul.o                    418
+    DblSub.o                    226
+    DblToS32.o                   58
+    DblToU32.o                   40
+    FltToDbl.o                   72
+    S32ToDbl.o                   34
+    U32ToDbl.o                   26
+    fmod.o                      444
+    fpinit_M.o                   34
+    frexp.o                     112
+    frexpf.o                     72
+    ldexp.o                     314
+    ldexpf.o                    196
+    math_wrappers64.o            14
+    strto32.o                   896
+    strto64.o                 1 306       72
+    -------------------------------------------------
+    Total:                    5 314       72
+
+rt7M_tl.a: [4]
+    ABImemclr.o                   6
+    ABImemclr4.o                  6
+    ABImemcpy_small.o            24
+    ABImemset48.o                50
+    ABImemset_small.o            18
+    I64DivMod_small.o           262
+    I64DivZer.o                   2
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 12
+    data_init.o                  40
+    lz77_init_single.o          122
+    memchr.o                     88
+    strchr.o                     22
+    strcmp.o                     18
+    strlen_small.o               20
+    strncpy_small.o              30
+    zero_init3.o                 58
+    -------------------------------------------------
+    Total:                      818
+
+shb_l.a: [5]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                         50        6
+    Linker created                        33    1 024
+-----------------------------------------------------
+    Grand Total:             40 050    3 828   43 096
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base    0x800'a984           --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'a9a4           --   Gb  - Linker created -
+?main                    0x800'a9a5          Code  Gb  cmain.o [4]
+AHBPrescTable            0x800'a7d4    0x10  Data  Gb  system_stm32f4xx.o [1]
+APBPrescTable            0x800'a9f4     0x8  Data  Gb  system_stm32f4xx.o [1]
+AppCmdProcess            0x800'7f05   0x334  Code  Lc  main.o [1]
+AppCmdProcess::tracked  0x2000'a42c     0x4  Data  Lc  main.o [1]
+CSTACK$$Base            0x2000'a458           --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'a858           --   Gb  - Linker created -
+CacheMore                0x800'2999    0x24  Code  Lc  xlocale_c.o [2]
+ConsoleParseTask         0x800'7e1f    0x88  Code  Lc  main.o [1]
+ConsoleRead              0x800'7ea7    0x4c  Code  Lc  main.o [1]
+Dtentox                  0x800'1969   0x124  Code  Lc  strto32.o [3]
+Dtentox                  0x800'1fc9   0x190  Code  Lc  strto64.o [3]
+Error_Handler            0x800'8295     0x2  Code  Gb  main.o [1]
+FWUpgrade                0x800'8f75    0xf4  Code  Gb  gnss_fw_upgrade.o [1]
+GNSSParser_Data         0x2000'9ae0   0x3a8  Data  Lc  main.o [1]
+GNSS_Bus_Disable         0x800'486f    0x2e  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_Bus_Enable          0x800'483b    0x34  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_Bus_ErrorCallback   0x800'4927     0xe  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_Bus_Reset           0x800'4817    0x24  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_Bus_RxCallback      0x800'4919     0xe  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_Bus_Write           0x800'48c9    0x1e  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_DATA_CfgMessageList
+                         0x800'3fcb    0x1c  Code  Gb  gnss_data.o [1]
+GNSS_DATA_GetGNSInfo     0x800'37fd   0x15a  Code  Gb  gnss_data.o [1]
+GNSS_DATA_GetGNSSAck     0x800'3f95    0x16  Code  Gb  gnss_data.o [1]
+GNSS_DATA_GetGPGSTInfo   0x800'399d    0xc6  Code  Gb  gnss_data.o [1]
+GNSS_DATA_GetGPRMCInfo   0x800'3a8d   0x16c  Code  Gb  gnss_data.o [1]
+GNSS_DATA_GetGSAInfo     0x800'3c25   0x138  Code  Gb  gnss_data.o [1]
+GNSS_DATA_GetGSVInfo     0x800'3d95   0x152  Code  Gb  gnss_data.o [1]
+GNSS_DATA_GetMsglistAck
+                         0x800'3f6d    0x1e  Code  Gb  gnss_data.o [1]
+GNSS_DATA_GetPSTMVerInfo
+                         0x800'3f03    0x3a  Code  Gb  gnss_data.o [1]
+GNSS_DATA_GetValidInfo   0x800'32f1    0xee  Code  Gb  gnss_data.o [1]
+GNSS_DATA_PrintTrackedPositions
+                         0x800'35f9   0x11a  Code  Gb  gnss_data.o [1]
+GNSS_DATA_SendCommand    0x800'32a9    0x3e  Code  Gb  gnss_data.o [1]
+GNSS_DATA_TrackGotPos    0x800'3415   0x120  Code  Gb  gnss_data.o [1]
+GNSS_Get_Buffer          0x800'489d    0x10  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_I2C_DeInit          0x800'6301     0xe  Code  Gb  config_bus.o [1]
+GNSS_I2C_Init            0x800'62c1    0x2a  Code  Gb  config_bus.o [1]
+GNSS_IF_ConsoleRead      0x800'4465    0x24  Code  Gb  gnss_if.o [1]
+GNSS_IF_ConsoleReadable
+                         0x800'4491    0x1a  Code  Gb  gnss_if.o [1]
+GNSS_IF_ConsoleWrite     0x800'4445     0x4  Code  Gb  gnss_if.o [1]
+GNSS_IF_ConsoleWriteChar
+                         0x800'4449     0x2  Code  Gb  gnss_if.o [1]
+GNSS_IF_Delay            0x800'44c7     0x4  Code  Gb  gnss_if.o [1]
+GNSS_IF_WriteCommand     0x800'44b1    0x16  Code  Gb  gnss_if.o [1]
+GNSS_IO_Readable         0x800'47c7    0x26  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_IO_Receive          0x800'47b3     0xe  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_IO_Transmit         0x800'4797    0x1c  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_Init                0x800'4775    0x22  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_PARSER_CheckSanity
+                         0x800'8bfb    0x6a  Code  Gb  gnss_parser.o [1]
+GNSS_PARSER_Init         0x800'8b4d    0xae  Code  Gb  gnss_parser.o [1]
+GNSS_PARSER_ParseMsg     0x800'8c65    0xae  Code  Gb  gnss_parser.o [1]
+GNSS_Release_Buffer      0x800'48ad    0x1c  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_Reset               0x800'47ed    0x20  Code  Gb  x_nucleo_gnss1a1.o [1]
+GNSS_UART_DeInit         0x800'62eb     0xe  Code  Gb  config_bus.o [1]
+GNSS_UART_Init           0x800'630f    0x26  Code  Gb  config_bus.o [1]
+GNSS_Wakeup_Status       0x800'48e7    0x16  Code  Gb  x_nucleo_gnss1a1.o [1]
+Get_GNSS_FW_Version      0x800'931b    0x8e  Code  Lc  gnss_fw_upgrade.o [1]
+HAL_DMA_Abort_IT         0x800'7799    0x24  Code  Gb  stm32f4xx_hal_dma.o [1]
+HAL_Delay                0x800'474d    0x28  Code  Wk  stm32f4xx_hal.o [1]
+HAL_GPIO_DeInit          0x800'61b3    0xda  Code  Gb  stm32f4xx_hal_gpio.o [1]
+HAL_GPIO_Init            0x800'602d   0x186  Code  Gb  stm32f4xx_hal_gpio.o [1]
+HAL_GPIO_ReadPin         0x800'628d     0xc  Code  Gb  stm32f4xx_hal_gpio.o [1]
+HAL_GPIO_WritePin        0x800'6299     0x8  Code  Gb  stm32f4xx_hal_gpio.o [1]
+HAL_GetTick              0x800'599d     0xc  Code  Wk  stm32f4xx_hal.o [1]
+HAL_I2C_DeInit           0x800'7a2f    0x26  Code  Gb  stm32f4xx_hal_i2c.o [1]
+HAL_I2C_Init             0x800'796d    0xc2  Code  Gb  stm32f4xx_hal_i2c.o [1]
+HAL_I2C_Master_Receive_IT
+                         0x800'7ac7    0x56  Code  Gb  stm32f4xx_hal_i2c.o [1]
+HAL_I2C_Master_Transmit_IT
+                         0x800'7a6f    0x58  Code  Gb  stm32f4xx_hal_i2c.o [1]
+HAL_I2C_MspDeInit        0x800'7751    0x30  Code  Gb  stm32f4xx_hal_msp.o [1]
+HAL_I2C_MspInit          0x800'76e9    0x68  Code  Gb  stm32f4xx_hal_msp.o [1]
+HAL_IncTick              0x800'a951    0x10  Code  Wk  stm32f4xx_hal.o [1]
+HAL_Init                 0x800'8821    0x30  Code  Gb  stm32f4xx_hal.o [1]
+HAL_InitTick             0x800'87e1    0x40  Code  Wk  stm32f4xx_hal.o [1]
+HAL_MspInit              0x800'75bd    0x60  Code  Gb  stm32f4xx_hal_msp.o [1]
+HAL_NVIC_DisableIRQ      0x800'8771     0x8  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HAL_NVIC_EnableIRQ       0x800'8767     0xa  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HAL_NVIC_SetPriority     0x800'872d    0x3a  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HAL_NVIC_SetPriorityGrouping
+                         0x800'8713    0x1a  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HAL_RCC_ClockConfig      0x800'77c1    0xfe  Code  Gb  stm32f4xx_hal_rcc.o [1]
+HAL_RCC_GetHCLKFreq      0x800'78cb     0x6  Code  Gb  stm32f4xx_hal_rcc.o [1]
+HAL_RCC_GetPCLK1Freq     0x800'78d1    0x10  Code  Gb  stm32f4xx_hal_rcc.o [1]
+HAL_RCC_GetPCLK2Freq     0x800'78e1     0xe  Code  Gb  stm32f4xx_hal_rcc.o [1]
+HAL_RCC_OscConfig        0x800'8855   0x2f8  Code  Wk  stm32f4xx_hal_rcc.o [1]
+HAL_SYSTICK_CLKSourceConfig
+                         0x800'87ab    0x1a  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HAL_SYSTICK_Config       0x800'8783    0x28  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HAL_UART_DeInit          0x800'5a1f    0x20  Code  Gb  stm32f4xx_hal_uart.o [1]
+HAL_UART_ErrorCallback   0x800'6363     0x6  Code  Gb  config_bus.o [1]
+HAL_UART_IRQHandler      0x800'5c43   0x14e  Code  Gb  stm32f4xx_hal_uart.o [1]
+HAL_UART_Init            0x800'59a9    0x1e  Code  Gb  stm32f4xx_hal_uart.o [1]
+HAL_UART_MspDeInit       0x800'76a1    0x3c  Code  Gb  stm32f4xx_hal_msp.o [1]
+HAL_UART_MspInit         0x800'761d    0x6c  Code  Gb  stm32f4xx_hal_msp.o [1]
+HAL_UART_Receive         0x800'5aeb    0xb6  Code  Gb  stm32f4xx_hal_uart.o [1]
+HAL_UART_Receive_IT      0x800'5beb    0x4c  Code  Gb  stm32f4xx_hal_uart.o [1]
+HAL_UART_RxCpltCallback
+                         0x800'635d     0x6  Code  Gb  config_bus.o [1]
+HAL_UART_Transmit        0x800'5a3f    0xac  Code  Gb  stm32f4xx_hal_uart.o [1]
+HAL_UART_Transmit_IT     0x800'5ba9    0x42  Code  Gb  stm32f4xx_hal_uart.o [1]
+Handle_Upgrading_Process
+                         0x800'9069   0x294  Code  Lc  gnss_fw_upgrade.o [1]
+IO_UART_Init             0x800'6335    0x28  Code  Gb  config_bus.o [1]
+LoadInt                  0x800'4c17    0x7a  Code  Lc  xprintffull.o [2]
+NMEA_CheckAGPSMsg        0x800'01c5    0xa6  Code  Lc  NMEA_parser.o [1]
+NMEA_Copy_Data           0x800'1299    0x64  Code  Gb  NMEA_parser.o [1]
+NMEA_ParseGNS            0x800'048d   0x156  Code  Gb  NMEA_parser.o [1]
+NMEA_ParseGPGGA          0x800'0389    0xfa  Code  Gb  NMEA_parser.o [1]
+NMEA_ParseGPGST          0x800'0619    0xc2  Code  Gb  NMEA_parser.o [1]
+NMEA_ParseGPRMC          0x800'06fd    0xd2  Code  Gb  NMEA_parser.o [1]
+NMEA_ParseGSA            0x800'0811   0x116  Code  Gb  NMEA_parser.o [1]
+NMEA_ParseGSV            0x800'0927   0x15e  Code  Gb  NMEA_parser.o [1]
+NMEA_ParsePSTMAGPS       0x800'1155   0x13e  Code  Gb  NMEA_parser.o [1]
+NMEA_ParsePSTMDatalog    0x800'0e11   0x156  Code  Gb  NMEA_parser.o [1]
+NMEA_ParsePSTMGeofence   0x800'0b13   0x1b4  Code  Gb  NMEA_parser.o [1]
+NMEA_ParsePSTMOdo        0x800'0d13    0xe6  Code  Gb  NMEA_parser.o [1]
+NMEA_ParsePSTMPASSRTN    0x800'10b7    0x9c  Code  Gb  NMEA_parser.o [1]
+NMEA_ParsePSTMSavePar    0x800'1031    0x7c  Code  Gb  NMEA_parser.o [1]
+NMEA_ParsePSTMVER        0x800'0aa3    0x68  Code  Gb  NMEA_parser.o [1]
+NMEA_ParsePSTMsgl        0x800'0f67    0x7c  Code  Gb  NMEA_parser.o [1]
+NMEA_ResetGSVMsg         0x800'0195    0x30  Code  Lc  NMEA_parser.o [1]
+NVIC_SetPriority         0x800'86f9    0x1a  Code  Lc  stm32f4xx_hal_cortex.o [1]
+PendSV_Handler           0x800'8645          Code  Gb  portasm.o [1]
+Region$$Table$$Base      0x800'a984           --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'a9a4           --   Gb  - Linker created -
+SVC_Handler              0x800'869d          Code  Gb  portasm.o [1]
+SysTick_Handler          0x800'a92d     0xe  Code  Gb  stm32f4xx_it.o [1]
+SystemCoreClock         0x2000'0018     0x4  Data  Gb  system_stm32f4xx.o [1]
+SystemInit               0x800'a785    0x3a  Code  Gb  system_stm32f4xx.o [1]
+TeseoConsumerTask        0x800'7d7b    0xa4  Code  Lc  main.o [1]
+Teseo_Bus_AbortCallback
+                         0x800'a765    0x12  Code  Lc  teseo_io.o [1]
+Teseo_Bus_BackgroundProcess
+                         0x800'a777     0xc  Code  Lc  teseo_io.o [1]
+Teseo_Bus_Disable        0x800'a6dd    0x1e  Code  Lc  teseo_io.o [1]
+Teseo_Bus_Enable         0x800'a6bf    0x1e  Code  Lc  teseo_io.o [1]
+Teseo_Bus_ErrorCallback
+                         0x800'a74d    0x18  Code  Lc  teseo_io.o [1]
+Teseo_Bus_OnOff          0x800'a6a9    0x16  Code  Lc  teseo_io.o [1]
+Teseo_Bus_RxCallback     0x800'a735    0x18  Code  Lc  teseo_io.o [1]
+Teseo_Bus_Write          0x800'a711    0x24  Code  Lc  teseo_io.o [1]
+Teseo_Drv               0x2000'001c    0x28  Data  Gb  teseo_io.o [1]
+Teseo_Get_Buffer         0x800'a6fb     0x8  Code  Lc  teseo_io.o [1]
+Teseo_I2C_Data          0x2000'a3f4    0x28  Data  Lc  teseo_i2c.o [1]
+Teseo_IO_static_alloc::Teseo_IO_Data
+                        0x2000'a44c     0x8  Data  Lc  x_nucleo_gnss1a1.o [1]
+Teseo_Queue_static_alloc::Teseo_Queue_Instance
+                        0x2000'9e88   0x2d0  Data  Lc  teseo_queue.o [1]
+Teseo_Release_Buffer     0x800'a703     0xe  Code  Lc  teseo_io.o [1]
+Teseo_UART_Data         0x2000'a43c    0x10  Data  Lc  teseo_uart.o [1]
+UART_DMAAbortOnError     0x800'5e11     0xc  Code  Lc  stm32f4xx_hal_uart.o [1]
+UART_EndRxTransfer       0x800'5df5    0x1c  Code  Lc  stm32f4xx_hal_uart.o [1]
+UART_Receive_IT          0x800'5e1d    0x88  Code  Lc  stm32f4xx_hal_uart.o [1]
+UART_SetConfig           0x800'5ea5   0x13e  Code  Lc  stm32f4xx_hal_uart.o [1]
+UART_WaitOnFlagUntilTimeout
+                         0x800'5d91    0x56  Code  Lc  stm32f4xx_hal_uart.o [1]
+USART1_IRQHandler        0x800'a93b     0x6  Code  Gb  stm32f4xx_it.o [1]
+USART2_IRQHandler        0x800'a941     0x6  Code  Gb  stm32f4xx_it.o [1]
+_Encoding_8859_1_Mbrlen
+                         0x800'1869     0x2  Code  Gb  xencoding_8859_1.o [2]
+_Encoding_8859_1_Wctomb
+                         0x800'1857    0x12  Code  Gb  xencoding_8859_1.o [2]
+_GenldFull               0x800'5675   0x274  Code  Lc  xprintffull.o [2]
+_LdtobFull               0x800'5271   0x3d6  Code  Lc  xprintffull.o [2]
+_LitobFull               0x800'5121   0x10a  Code  Lc  xprintffull.o [2]
+_LocaleC_isalpha         0x800'295f     0xc  Code  Gb  xlocale_c.o [2]
+_LocaleC_islower         0x800'2959     0x4  Code  Gb  xlocale_c.o [2]
+_LocaleC_isspace         0x800'2975    0x14  Code  Gb  xlocale_c.o [2]
+_LocaleC_isupper         0x800'295d     0x2  Code  Gb  xlocale_c.o [2]
+_LocaleC_tolower         0x800'2989     0xc  Code  Gb  xlocale_c.o [2]
+_Locale_lconv           0x2000'0048    0x38  Data  Lc  xlocale_c.o [2]
+_PrintfFull              0x800'4a55   0x1aa  Code  Gb  xprintffull.o [2]
+_PutcharsFull            0x800'58e9    0x2e  Code  Lc  xprintffull.o [2]
+_PutfldFull              0x800'4c91   0x2d4  Code  Lc  xprintffull.o [2]
+_PutstrFull              0x800'505b    0xc6  Code  Lc  xprintffull.o [2]
+_PuttxtFull              0x800'4f65    0xf6  Code  Lc  xprintffull.o [2]
+_SNProut                 0x800'1c5b    0x1a  Code  Gb  xsnprout.o [2]
+_SProut                  0x800'1ca7     0xa  Code  Gb  xsprout.o [2]
+__aeabi_cdcmple          0x800'7519          Code  Gb  DblCmpLe.o [3]
+__aeabi_cdrcmple         0x800'7549          Code  Gb  DblCmpGe.o [3]
+__aeabi_d2iz             0x800'4555          Code  Gb  DblToS32.o [3]
+__aeabi_d2uiz            0x800'7579          Code  Gb  DblToU32.o [3]
+__aeabi_dadd             0x800'3035          Code  Gb  DblAdd.o [3]
+__aeabi_ddiv             0x800'2dc9          Code  Gb  DblDiv.o [3]
+__aeabi_dmul             0x800'2ae9          Code  Gb  DblMul.o [3]
+__aeabi_dsub             0x800'31c5          Code  Gb  DblSub.o [3]
+__aeabi_f2d              0x800'1bf5          Code  Gb  FltToDbl.o [3]
+__aeabi_i2d              0x800'3011          Code  Gb  S32ToDbl.o [3]
+__aeabi_ldiv0            0x800'86f5          Code  Gb  I64DivZer.o [4]
+__aeabi_memclr           0x800'1771          Code  Gb  ABImemclr.o [4]
+__aeabi_memclr4          0x800'16f1          Code  Gb  ABImemclr4.o [4]
+__aeabi_ui2d             0x800'75a1          Code  Gb  U32ToDbl.o [3]
+__check_unreleased_buffer
+                         0x800'a0d9    0x10  Code  Lc  teseo_queue.o [1]
+__cmain                  0x800'a9a5          Code  Gb  cmain.o [4]
+__exit                   0x800'945d    0x14  Code  Gb  exit.o [5]
+__find_msg_idx           0x800'a0bb    0x1e  Code  Lc  teseo_queue.o [1]
+__iar_Fail_s             0x800'73c5    0x1c  Code  Gb  xfail_s.o [2]
+__iar_Mbcurmax           0x800'7405     0xa  Code  Gb  xmbcurmax.o [2]
+__iar_Memchr             0x800'2a21          Code  Gb  memchr.o [4]
+__iar_Memset4_word       0x800'1c75          Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word       0x800'1c75          Code  Gb  ABImemset48.o [4]
+__iar_Sto32              0x800'1a8d   0x12a  Code  Gb  strto32.o [3]
+__iar_Sto64              0x800'2169   0x194  Code  Gb  strto64.o [3]
+__iar_Stoflt             0x800'2579   0x1c4  Code  Gb  iar_Stoflt.o [2]
+__iar_Stolx              0x800'17c3    0x82  Code  Gb  iar_Stolx.o [2]
+__iar_Stopfx             0x800'2455   0x122  Code  Gb  iar_Stopfx.o [2]
+__iar_Stoulx             0x800'1cd9   0x13a  Code  Gb  iar_Stoulx.o [2]
+__iar_Stoxflt            0x800'273d   0x1e6  Code  Gb  iar_Stoxflt.o [2]
+__iar_Stoxflt::digits    0x800'2928    0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Stoxflt::vals      0x800'2940    0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Strchr             0x800'73ad          Code  Gb  strchr.o [4]
+__iar_dadd               0x800'31d5          Code  Gb  DblSub.o [3]
+__iar_data_init3         0x800'a8e1    0x28  Code  Gb  data_init.o [4]
+__iar_dsub               0x800'3045          Code  Gb  DblAdd.o [3]
+__iar_dsubStart          0x800'3057          Code  Gb  DblAdd.o [3]
+__iar_fmod64             0x800'45a5          Code  Gb  fmod.o [3]
+__iar_frexp              0x800'2a85          Code  Gb  frexp.o [3]
+__iar_frexp32            0x800'2349          Code  Gb  frexpf.o [3]
+__iar_frexpf             0x800'235d          Code  Gb  frexpf.o [3]
+__iar_frexpl             0x800'2a85          Code  Gb  frexp.o [3]
+__iar_globLocale        0x2000'0080    0x48  Data  Lc  xlocale_c.o [2]
+__iar_global_Locale      0x800'2995     0x4  Code  Gb  xlocale_c.o [2]
+__iar_init_vfp           0x800'a961          Code  Gb  fpinit_M.o [3]
+__iar_ldexp32            0x800'2391          Code  Gb  ldexpf.o [3]
+__iar_ldexp64            0x800'2c8d          Code  Gb  ldexp.o [3]
+__iar_lz77_init_single3
+                         0x800'16f7    0x7a  Code  Gb  lz77_init_single.o [4]
+__iar_program_start      0x800'a9e9          Code  Gb  cstartup_M.o [4]
+__iar_scalbln32          0x800'2391          Code  Gb  ldexpf.o [3]
+__iar_scalbln64          0x800'2c8d          Code  Gb  ldexp.o [3]
+__iar_scalbn32           0x800'2391          Code  Gb  ldexpf.o [3]
+__iar_scalbn64           0x800'2c8d          Code  Gb  ldexp.o [3]
+__iar_small_Memcpy       0x800'4541          Code  Gb  ABImemcpy_small.o [4]
+__iar_small_Memset       0x800'1cb1          Code  Gb  ABImemset_small.o [4]
+__iar_small_Memset_word
+                         0x800'1cb1          Code  Gb  ABImemset_small.o [4]
+__iar_small_memcpy       0x800'453d          Code  Gb  ABImemcpy_small.o [4]
+__iar_small_memcpy4      0x800'453d          Code  Gb  ABImemcpy_small.o [4]
+__iar_small_memcpy8      0x800'453d          Code  Gb  ABImemcpy_small.o [4]
+__iar_small_memset       0x800'1cb1          Code  Gb  ABImemset_small.o [4]
+__iar_small_strlen       0x800'44e5          Code  Gb  strlen_small.o [4]
+__iar_small_strncpy      0x800'1c3d          Code  Gb  strncpy_small.o [4]
+__iar_small_uldivmod     0x800'7411          Code  Gb  I64DivMod_small.o [4]
+__iar_softfp___iar_frexp64
+                         0x800'2a79          Code  Gb  frexp.o [3]
+__iar_softfp_frexp       0x800'2a79          Code  Gb  frexp.o [3]
+__iar_softfp_frexpl      0x800'2a79          Code  Gb  frexp.o [3]
+__iar_vfp___iar_fmod64   0x800'4591          Code  Gb  fmod.o [3]
+__iar_vfp_fmod           0x800'4591          Code  Gb  fmod.o [3]
+__iar_vfp_fmodl          0x800'4591          Code  Gb  fmod.o [3]
+__iar_vfp_strtod         0x800'184f     0x8  Code  Gb  math_wrappers64.o [3]
+__iar_zero_init3         0x800'1777    0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init         0x800'a9c3     0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000          Data  Gb  startup_stm32f401xe.o [1]
+_call_main               0x800'a9b1          Code  Gb  cmain.o [4]
+_exit                    0x800'a9cd          Code  Gb  cexit.o [4]
+_gLocale_mblen           0x800'29f9     0x4  Code  Gb  xlocale_c.o [2]
+_gLocale_mblenInt        0x800'29bd    0x2c  Code  Gb  xlocale_c.o [2]
+_gLocale_wctomb          0x800'29fd     0x4  Code  Gb  xlocale_c.o [2]
+_gLocale_wctombInt       0x800'29f5     0x4  Code  Gb  xlocale_c.o [2]
+_main                    0x800'a9bf          Code  Gb  cmain.o [4]
+abort                    0x800'86ed     0x6  Code  Gb  abort.o [2]
+already_flashed         0x2000'a3b4     0x4  Data  Lc  gnss_fw_upgrade.o [1]
+app                     0x2000'91e0   0x900  Data  Lc  NMEA_parser.o [1]
+atoi                     0x800'1e19     0x2  Code  Gb  iar_Stoulx.o [2]
+b                       0x2000'0044     0x4  Data  Lc  teseo_queue.o [1]
+char2int                 0x800'12fd    0x34  Code  Gb  NMEA_parser.o [1]
+check_longer_msg         0x800'a0e9    0x48  Code  Lc  teseo_queue.o [1]
+consoleMutexHandle      0x2000'a41c     0x4  Data  Gb  main.o [1]
+consoleParseTaskHandle  0x2000'a428     0x4  Data  Gb  main.o [1]
+ddiv                     0x800'18d1    0x5a  Code  Lc  strto32.o [3]
+ddiv                     0x800'1ef5    0xc4  Code  Lc  strto64.o [3]
+digit2int                0x800'02b5    0x78  Code  Lc  NMEA_parser.o [1]
+digits                   0x800'a80c    0x28  Data  Lc  iar_Stoulx.o [2]
+dmul                     0x800'1875    0x5c  Code  Lc  strto32.o [3]
+dmul                     0x800'1e2d    0xc6  Code  Lc  strto64.o [3]
+exit                     0x800'a9c7     0x4  Code  Gb  exit.o [2]
+ffs                      0x800'a061    0x36  Code  Lc  teseo_queue.o [1]
+fmod                     0x800'45a5          Code  Gb  fmod.o [3]
+fmodl                    0x800'45a5          Code  Gb  fmod.o [3]
+frexpf                   0x800'2349          Code  Gb  frexpf.o [3]
+gnssCmd                 0x2000'a284    0x5c  Data  Lc  gnss_data.o [1]
+gnssDataMutexHandle     0x2000'a420     0x4  Data  Gb  main.o [1]
+hi2c                    0x2000'a2e0    0x54  Data  Gb  config_bus.o [1]
+huart                   0x2000'a334    0x40  Data  Gb  config_bus.o [1]
+i2c_fsm                  0x800'a271    0xc8  Code  Lc  teseo_i2c.o [1]
+io_huart                0x2000'a374    0x40  Data  Gb  config_bus.o [1]
+isalpha                  0x800'31af    0x14  Code  Gb  isalpha.o [2]
+isspace                  0x800'1cc3    0x14  Code  Gb  isspace.o [2]
+ldexp                    0x800'2c8d          Code  Gb  ldexp.o [3]
+ldexpf                   0x800'2391          Code  Gb  ldexpf.o [3]
+ldexpl                   0x800'2c8d          Code  Gb  ldexp.o [3]
+localeconv               0x800'2a01     0x4  Code  Gb  xlocale_c.o [2]
+main                     0x800'7be9   0x192  Code  Gb  main.o [1]
+makeFreeRtosPriority     0x800'4935     0xc  Code  Lc  cmsis_os.o [1]
+memchr                   0x800'2a21          Code  Gb  memchr.o [4]
+msg                     0x2000'90e0   0x100  Data  Lc  gnss_data.o [1]
+ndigs                    0x800'a7e4    0x28  Data  Lc  iar_Stoulx.o [2]
+nmea_checksum            0x800'029d    0x18  Code  Lc  NMEA_parser.o [1]
+osDelay                  0x800'498f     0xe  Code  Gb  cmsis_os.o [1]
+osKernelStart            0x800'4941     0xa  Code  Gb  cmsis_os.o [1]
+osMutexCreate            0x800'499d     0x6  Code  Gb  cmsis_os.o [1]
+osMutexRelease           0x800'49e5    0x36  Code  Gb  cmsis_os.o [1]
+osMutexWait              0x800'49a3    0x42  Code  Gb  cmsis_os.o [1]
+osSystickHandler         0x800'4a3b    0x14  Code  Gb  cmsis_os.o [1]
+osThreadCreate           0x800'494b    0x2e  Code  Gb  cmsis_os.o [1]
+osThreadYield            0x800'4979    0x16  Code  Gb  cmsis_os.o [1]
+pGNSS                   0x2000'a430     0xc  Data  Gb  main.o [1]
+pows                     0x800'1bdc    0x18  Data  Lc  strto32.o [3]
+pows                     0x800'a838    0x48  Data  Lc  strto64.o [3]
+printHelp                0x800'8d15    0x80  Code  Gb  gnss_utils.o [1]
+prvAddCurrentTaskToDelayedList
+                         0x800'6bad    0x64  Code  Lc  tasks.o [1]
+prvAddNewTaskToReadyList
+                         0x800'6459    0xa2  Code  Lc  tasks.o [1]
+prvCopyDataFromQueue     0x800'712d    0x28  Code  Lc  queue.o [1]
+prvCopyDataToQueue       0x800'70c5    0x68  Code  Lc  queue.o [1]
+prvDeleteTCB             0x800'6a13    0x14  Code  Lc  tasks.o [1]
+prvIdleTask              0x800'69bd    0x56  Code  Lc  tasks.o [1]
+prvInitialiseNewQueue    0x800'6cd9    0x16  Code  Lc  queue.o [1]
+prvInitialiseNewTask     0x800'63e1    0x78  Code  Lc  tasks.o [1]
+prvInsertBlockIntoFreeList
+                         0x800'8567    0x46  Code  Lc  heap_4.o [1]
+prvIsQueueEmpty          0x800'71b9    0x16  Code  Lc  queue.o [1]
+prvResetNextTaskUnblockTime
+                         0x800'6a27    0x1c  Code  Lc  tasks.o [1]
+prvTaskExitError         0x800'71fd    0x1c  Code  Lc  port.o [1]
+prvTaskIsTaskSuspended   0x800'65df    0x2c  Code  Lc  tasks.o [1]
+prvUnlockQueue           0x800'7155    0x64  Code  Lc  queue.o [1]
+pvPortMalloc             0x800'8401   0x104  Code  Gb  heap_4.o [1]
+pvTaskIncrementMutexHeldCount
+                         0x800'6b65    0x14  Code  Gb  tasks.o [1]
+pxCurrentTCB            0x2000'a180     0x4  Data  Gb  tasks.o [1]
+pxDelayedTaskList       0x2000'a184     0x4  Data  Lc  tasks.o [1]
+pxEnd                   0x2000'40d0     0x4  Data  Lc  heap_4.o [1]
+pxOverflowDelayedTaskList
+                        0x2000'a188     0x4  Data  Lc  tasks.o [1]
+pxPortInitialiseStack    0x800'71d5    0x26  Code  Gb  port.o [1]
+pxReadyTasksLists       0x2000'a1f8    0x8c  Data  Lc  tasks.o [1]
+rxBuffer                0x2000'00c8  0x4000  Data  Lc  gnss_fw_upgrade.o [1]
+scalbln                  0x800'2c8d          Code  Gb  ldexp.o [3]
+scalblnf                 0x800'2391          Code  Gb  ldexpf.o [3]
+scalblnl                 0x800'2c8d          Code  Gb  ldexp.o [3]
+scalbn                   0x800'2c8d          Code  Gb  ldexp.o [3]
+scalbnf                  0x800'2391          Code  Gb  ldexpf.o [3]
+scalbnl                  0x800'2c8d          Code  Gb  ldexp.o [3]
+scale                    0x800'522b    0x46  Code  Lc  xprintffull.o [2]
+scan_timestamp_date      0x800'035b    0x24  Code  Lc  NMEA_parser.o [1]
+scan_timestamp_time      0x800'0337    0x24  Code  Lc  NMEA_parser.o [1]
+scan_utc                 0x800'0271    0x2c  Code  Lc  NMEA_parser.o [1]
+sec_hand                0x2000'a454     0x4  Data  Lc  xfail_s.o [2]
+semaphore_free           0x800'a0a3     0xa  Code  Lc  teseo_queue.o [1]
+semaphore_free_irq       0x800'a0b5     0x6  Code  Lc  teseo_queue.o [1]
+semaphore_lock           0x800'a097     0xc  Code  Lc  teseo_queue.o [1]
+semaphore_lock_irq       0x800'a0ad     0x8  Code  Lc  teseo_queue.o [1]
+showCmds                 0x800'8d95    0x90  Code  Gb  gnss_utils.o [1]
+showPrompt               0x800'8e2b     0x6  Code  Gb  gnss_utils.o [1]
+snprintf                 0x800'44f9    0x44  Code  Gb  snprintf.o [2]
+sprintf                  0x800'93f5    0x40  Code  Gb  sprintf.o [2]
+stored_positions        0x2000'7ce0  0x1400  Data  Lc  gnss_data.o [1]
+strchr                   0x800'73ad          Code  Gb  strchr.o [4]
+strcmp                   0x800'17b1          Code  Gb  strcmp.o [4]
+strncmp                  0x800'9435    0x28  Code  Gb  strncmp.o [2]
+strtod                   0x800'2341     0x6  Code  Gb  strto64.o [3]
+strtof                   0x800'1bd5     0x6  Code  Gb  strto32.o [3]
+strtol                   0x800'1845     0x4  Code  Gb  iar_Stolx.o [2]
+strtold                  0x800'2341     0x6  Code  Gb  strto64.o [3]
+strtoul                  0x800'1e25     0x2  Code  Gb  iar_Stoulx.o [2]
+syncBuffer              0x2000'a3b8    0x1c  Data  Lc  gnss_fw_upgrade.o [1]
+teseoConsumerTaskHandle
+                        0x2000'a424     0x4  Data  Gb  main.o [1]
+teseo_i2c_background_process
+                         0x800'a3ff    0x32  Code  Gb  teseo_i2c.o [1]
+teseo_i2c_onoff          0x800'a39d    0x58  Code  Gb  teseo_i2c.o [1]
+teseo_i2c_rx_callback    0x800'a339    0x64  Code  Gb  teseo_i2c.o [1]
+teseo_queue_claim_rd_buffer
+                         0x800'a203    0x3a  Code  Gb  teseo_queue.o [1]
+teseo_queue_claim_wr_buffer
+                         0x800'a179    0x44  Code  Gb  teseo_queue.o [1]
+teseo_queue_init         0x800'a131    0x3e  Code  Gb  teseo_queue.o [1]
+teseo_queue_release_rd_buffer
+                         0x800'a23d    0x34  Code  Gb  teseo_queue.o [1]
+teseo_queue_release_wr_buffer
+                         0x800'a1bd    0x46  Code  Gb  teseo_queue.o [1]
+teseo_rx_callback_ok     0x800'a575    0xb0  Code  Lc  teseo_uart.o [1]
+teseo_uart_rx_callback   0x800'a625    0x40  Code  Gb  teseo_uart.o [1]
+teseo_uart_rx_onoff      0x800'a665    0x40  Code  Gb  teseo_uart.o [1]
+tolower                  0x800'2a0d    0x14  Code  Gb  tolower.o [2]
+ucHeap                  0x2000'40e0  0x3c00  Data  Lc  heap_4.o [1]
+ucMaxSysCallPriority    0x2000'0000     0x1  Data  Lc  port.o [1]
+ulMaxPRIGROUPValue      0x2000'0008     0x4  Data  Lc  port.o [1]
+uwTick                  0x2000'0010     0x4  Data  Gb  stm32f4xx_hal.o [1]
+uwTickFreq              0x2000'000c     0x1  Data  Gb  stm32f4xx_hal.o [1]
+uwTickPrio              0x2000'0014     0x4  Data  Gb  stm32f4xx_hal.o [1]
+uxCriticalNesting       0x2000'0004     0x4  Data  Lc  port.o [1]
+uxCurrentNumberOfTasks  0x2000'a1a4     0x4  Data  Lc  tasks.o [1]
+uxDeletedTasksWaitingCleanUp
+                        0x2000'a18c     0x4  Data  Lc  tasks.o [1]
+uxListRemove             0x800'8621    0x24  Code  Gb  list.o [1]
+uxPendedTicks           0x2000'a1b4     0x4  Data  Lc  tasks.o [1]
+uxSchedulerSuspended    0x2000'a1c8     0x4  Data  Lc  tasks.o [1]
+uxTaskNumber            0x2000'a1c0     0x4  Data  Lc  tasks.o [1]
+uxTopReadyPriority      0x2000'a1ac     0x4  Data  Lc  tasks.o [1]
+vListInitialise          0x800'85b5    0x1a  Code  Gb  list.o [1]
+vListInitialiseItem      0x800'85cf     0x6  Code  Gb  list.o [1]
+vListInsert              0x800'85ef    0x32  Code  Gb  list.o [1]
+vListInsertEnd           0x800'85d5    0x1a  Code  Gb  list.o [1]
+vPortEnableVFP           0x800'86d1          Code  Gb  portasm.o [1]
+vPortEnterCritical       0x800'72a9    0x32  Code  Gb  port.o [1]
+vPortExitCritical        0x800'72db    0x22  Code  Gb  port.o [1]
+vPortFree                0x800'8513    0x46  Code  Gb  heap_4.o [1]
+vPortStartFirstTask      0x800'86b9          Code  Gb  portasm.o [1]
+vPortValidateInterruptPriority
+                         0x800'7329    0x2c  Code  Gb  port.o [1]
+vTaskDelay               0x800'64fb    0x2e  Code  Gb  tasks.o [1]
+vTaskMissedYield         0x800'69b3     0xa  Code  Gb  tasks.o [1]
+vTaskPlaceOnEventList    0x800'6897    0x26  Code  Gb  tasks.o [1]
+vTaskPriorityInherit     0x800'6a5b    0x72  Code  Gb  tasks.o [1]
+vTaskResume              0x800'6613    0x42  Code  Gb  tasks.o [1]
+vTaskSetTimeOutState     0x800'6933    0x20  Code  Gb  tasks.o [1]
+vTaskStartScheduler      0x800'6685    0x54  Code  Gb  tasks.o [1]
+vTaskSuspend             0x800'652f    0x58  Code  Gb  tasks.o [1]
+vTaskSuspendAll          0x800'66d9     0xc  Code  Gb  tasks.o [1]
+vTaskSwitchContext       0x800'6845    0x52  Code  Gb  tasks.o [1]
+ver_buf                 0x2000'a3d4    0x20  Data  Lc  gnss_fw_upgrade.o [1]
+xBlockAllocatedBit      0x2000'40dc     0x4  Data  Lc  heap_4.o [1]
+xDelayedTaskList1       0x2000'a1cc    0x14  Data  Lc  tasks.o [1]
+xDelayedTaskList2       0x2000'a1e0    0x14  Data  Lc  tasks.o [1]
+xFreeBytesRemaining     0x2000'40d4     0x4  Data  Lc  heap_4.o [1]
+xIdleTaskHandle         0x2000'a1f4     0x4  Data  Lc  tasks.o [1]
+xMinimumEverFreeBytesRemaining
+                        0x2000'40d8     0x4  Data  Lc  heap_4.o [1]
+xNextTaskUnblockTime    0x2000'a1c4     0x4  Data  Lc  tasks.o [1]
+xNumOfOverflows         0x2000'a1bc     0x4  Data  Lc  tasks.o [1]
+xPendingReadyList       0x2000'a158    0x14  Data  Lc  tasks.o [1]
+xPortStartScheduler      0x800'7219    0x90  Code  Gb  port.o [1]
+xPortSysTickHandler      0x800'72fd    0x1e  Code  Gb  port.o [1]
+xQueueCreateMutex        0x800'6cef    0x28  Code  Gb  queue.o [1]
+xQueueGenericCreate      0x800'6ca1    0x38  Code  Gb  queue.o [1]
+xQueueGenericReceive     0x800'6ed1   0x14e  Code  Gb  queue.o [1]
+xQueueGenericReset       0x800'6c29    0x78  Code  Gb  queue.o [1]
+xQueueGenericSend        0x800'6d17   0x136  Code  Gb  queue.o [1]
+xQueueGiveFromISR        0x800'6e4d    0x70  Code  Gb  queue.o [1]
+xQueueReceiveFromISR     0x800'7025    0x82  Code  Gb  queue.o [1]
+xSchedulerRunning       0x2000'a1b0     0x4  Data  Lc  tasks.o [1]
+xStart                  0x2000'40c8     0x8  Data  Lc  heap_4.o [1]
+xSuspendedTaskList      0x2000'a190    0x14  Data  Lc  tasks.o [1]
+xTaskCheckForTimeOut     0x800'6953    0x60  Code  Gb  tasks.o [1]
+xTaskCreate              0x800'6389    0x58  Code  Gb  tasks.o [1]
+xTaskGetSchedulerState   0x800'6a43    0x18  Code  Gb  tasks.o [1]
+xTaskIncrementTick       0x800'6787    0xbe  Code  Gb  tasks.o [1]
+xTaskPriorityDisinherit
+                         0x800'6ad3    0x82  Code  Gb  tasks.o [1]
+xTaskRemoveFromEventList
+                         0x800'68d5    0x4e  Code  Gb  tasks.o [1]
+xTaskResumeAll           0x800'66e5    0x9a  Code  Gb  tasks.o [1]
+xTasksWaitingTermination
+                        0x2000'a16c    0x14  Data  Lc  tasks.o [1]
+xTickCount              0x2000'a1a8     0x4  Data  Lc  tasks.o [1]
+xYieldPending           0x2000'a1b8     0x4  Data  Lc  tasks.o [1]
+
+
+[1] = C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Obj
+[2] = dl7M_tlf.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  40 050 bytes of readonly  code memory
+   3 828 bytes of readonly  data memory
+  43 096 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

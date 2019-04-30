@@ -1,0 +1,7 @@
+Project: STM32F401RE-Nucleo
+Converter: IARProjectParser
+Date: 20190407
+
+Project needs GCC compatible startup code and linker script
+Project-STM32F4xx-Nucleo: FPU set to default FPU for device: FPv4-SP-D16.
+Project-STM32F4xx-Nucleo: FPU set to default FPU for device: FPv4-SP-D16.

@@ -1,0 +1,15 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\bin\armstlink2.dll" 
+
+"C:\Users\mallo\Desktop\git\CS5205\iar_ewarm_toolchain\STM32CubeExpansion_GNSS1_V2.1.0\Projects\Multi\Applications\GetPos\EWARM\STM32F401RE-Nucleo\Project-STM32F4xx-Nucleo\Exe\Project-STM32F4xx-Nucleo.out" 
+
+--plugin="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\bin\armbat.dll" 
+
+--device_macro="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\config\debugger\ST\STM32F4xx.dmac" 
+
+--flash_loader="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\config\flashloader\ST\FlashSTM32F401xE.board" 
+
+
+
+
