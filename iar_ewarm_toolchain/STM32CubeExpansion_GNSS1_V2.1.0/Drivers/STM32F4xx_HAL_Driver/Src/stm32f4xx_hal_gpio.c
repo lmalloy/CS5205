@@ -132,7 +132,7 @@
   * @{
   */
 
-#ifdef HAL_GPIO_MODULE_ENABLED
+//#ifdef HAL_GPIO_MODULE_ENABLED
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -533,7 +533,7 @@ __weak void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   * @}
   */
 
-#endif /* HAL_GPIO_MODULE_ENABLED */
+//#endif /* HAL_GPIO_MODULE_ENABLED */
 /**
   * @}
   */

@@ -142,11 +142,22 @@
 
 /* Private defines -----------------------------------------------------------*/
 
-#ifdef USE_STM32L0XX_NUCLEO
-#define CONSUMER_STACK_SIZE 512
-#else
+//#ifdef USE_STM32L0XX_NUCLEO
+//#define CONSUMER_STACK_SIZE 512
+//#else
 #define CONSUMER_STACK_SIZE 1024
-#endif /* USE_STM32L0XX_NUCLEO */
+//#endif /* USE_STM32L0XX_NUCLEO */
+
+#define PIN_PA0         GPIO_PIN_0
+#define PIN_PA1         GPIO_PIN_1
+#define PIN_PA4         GPIO_PIN_4
+#define PIN_PA5         GPIO_PIN_5
+#define PIN_PC0         GPIO_PIN_0
+#define PIN_PC1         GPIO_PIN_1
+#define PIN_PC2         GPIO_PIN_2
+#define PIN_PC3         GPIO_PIN_3
+#define PORT_A          GPIOA
+#define PORT_C          GPIOC
 
 /* Global variables ----------------------------------------------------------*/
 
@@ -281,6 +292,11 @@ static void Teseo_Consumer_Task_Init(void)
   osThreadDef(teseoConsumerTask, TeseoConsumerTask, osPriorityNormal, 0, CONSUMER_STACK_SIZE);
 
   teseoConsumerTaskHandle = osThreadCreate(osThread(teseoConsumerTask), NULL);
+  
+  if (teseoConsumerTaskHandle == NULL)
+  {
+    GNSS_IF_ConsoleWrite((uint8_t *)"Failed to create teseo task");
+  }
 }
 
 /*	
@@ -291,6 +307,11 @@ static void Console_Parse_Task_Init(void)
 {
   osThreadDef(consoleParseTask, ConsoleParseTask, osPriorityNormal, 0, 1024);
   consoleParseTaskHandle = osThreadCreate(osThread(consoleParseTask), NULL);
+  
+  if (consoleParseTaskHandle == NULL)
+  {
+    GNSS_IF_ConsoleWrite((uint8_t *)"Failed to create console task");
+  }
 }
 #endif /* USE_STM32L0XX_NUCLEO */
 
@@ -316,10 +337,35 @@ static void GPIO_Config(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GNSS_RST_PORT, &GPIO_InitStruct);
-#if 0
+  
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  
+  /*Configure GPIO pin : PA1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  
+  /*Configure GPIO pin : PA4 */
+  GPIO_InitStruct.Pin = GPIO_PIN_4;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  
+  /*Configure GPIO pin : PB0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  
+#if 1
   /*Configure GPIO pin : PA5 */
   GPIO_InitStruct.Pin = GNSS_WAKEUP_PIN;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GNSS_WAKEUP_PORT, &GPIO_InitStruct);
 #endif
@@ -378,6 +424,7 @@ static void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 15, 0);
 }
 #endif /* ifdef USE_STM32F4XX_NUCLEO */
+
 
 #ifdef USE_STM32L4XX_NUCLEO
 static void SystemClock_Config(void)
@@ -480,9 +527,10 @@ static void SystemClock_Config(void)
 }
 #endif /* USE_STM32L0XX_NUCLEO */
 
+
 /* TeseoConsumerTask function */
 void TeseoConsumerTask(void const * argument)
-{
+{  
   GNSSParser_Status_t status, check;
   const GNSS_MsgTypeDef *gnssMsg;
   
@@ -509,7 +557,10 @@ void TeseoConsumerTask(void const * argument)
   GNSS_PARSER_Init(&GNSSParser_Data);
 
   for(;;)
-  {    
+  {
+    // toggle pin PA1 on
+    HAL_GPIO_WritePin(PORT_A, PIN_PA1, GPIO_PIN_SET);
+    
     gnssMsg = GNSS_Get_Buffer(&pGNSS);
     if(gnssMsg == NULL)
     {
@@ -574,22 +625,29 @@ void TeseoConsumerTask(void const * argument)
 
       }
     }
+    // Toggle pin PA1 off
+    HAL_GPIO_WritePin(GPIOA, PIN_PA1, GPIO_PIN_RESET);
 
     GNSS_Release_Buffer(&pGNSS, gnssMsg);
 
-  }
+    
+    
+  }  
 }
 
 /* ConsoleParseTask function */
 #ifndef USE_STM32L0XX_NUCLEO
 void ConsoleParseTask(void const * argument)
-{ 
+{   
   char cmd[32] = {0};
   uint8_t ch;
   
   showCmds();
   for(;;)
   {
+    // PA0 pin on
+    HAL_GPIO_WritePin(GPIOA, PIN_PA0, GPIO_PIN_SET);
+    
     ch = '\0';
 
     while(!GNSS_IF_ConsoleReadable())
@@ -621,7 +679,13 @@ void ConsoleParseTask(void const * argument)
     {
       cmd[strlen(cmd)] = ch;
     }
+  
+  // PA0 pin off
+  HAL_GPIO_WritePin(GPIOA, PIN_PA0, GPIO_PIN_RESET);  
+    
   }
+  
+  
 }
 #endif /* USE_STM32L0XX_NUCLEO */
 
