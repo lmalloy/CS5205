@@ -70,6 +70,32 @@ static uint8_t gnssCmd[CMD_SZ];
 
 /* Public functions ----------------------------------------------------------*/
 
+/* Checks if the system is at specified altitude, puts to console result */
+void GNSS_DATA_AssertAltitude(GNSSParser_Data_t *pGNSSParser_Data)
+{
+  float64_t altitude_ = pGNSSParser_Data->gpgga_data.xyz.alt;
+  /*
+  (void)snprintf((char *)msg, MSG_SZ, "Altitude:\t\t[ %.2f%c ]\n\r",
+                   pGNSSParser_Data->gpgga_data.xyz.alt,
+                   (pGNSSParser_Data->gpgga_data.xyz.mis + 32U));
+  */
+  //(void)snprintf((char *)msg, MSG_SZ, "Altitude:\t\t[ %.2f ]\n\r", altitude_);
+  
+  //GNSS_IF_ConsoleWrite(msg);
+  
+  if(altitude_ > 480.00)
+  {
+    (void)snprintf((char *)msg, MSG_SZ, "Operator: Aircraft altitude in excess\n\r");
+    GNSS_IF_ConsoleWrite(msg);
+  }
+  
+  else if(altitude_ < 350.00)
+  {
+    (void)snprintf((char *)msg, MSG_SZ, "Operator: Aircraft below common Rolla Elevation\n\r");
+    GNSS_IF_ConsoleWrite(msg);
+  }
+}
+
 /* Sends a command to the GNSS module. */
 void GNSS_DATA_SendCommand(void *pHandle, uint8_t *pCommand)
 {

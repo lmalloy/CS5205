@@ -75,6 +75,13 @@ extern "C" {
  *  The implementation is up to the application according to specific needs.
  *  @{
  */
+  
+/**
+ * @brief  alerts operator if altitude is out of order
+ * @param  pGNSSParser_Data Handler of the GNSS data
+ * @retval None
+ */
+void GNSS_DATA_AssertAltitude(GNSSParser_Data_t *pGNSSParser_Data);
 
 /**
  * @brief  This function sends a command to the GNSS module.

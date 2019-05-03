@@ -172,6 +172,7 @@ osMutexId gnssDataMutexHandle;
 /* Tasks handle */
 osThreadId teseoConsumerTaskHandle;
 osThreadId consoleParseTaskHandle;
+osThreadId checkAltitudeTaskHandle;
 
 /* Private variables ---------------------------------------------------------*/
 
@@ -191,11 +192,15 @@ static void Console_Mutex_Init(void);
 
 static void Teseo_Consumer_Task_Init(void);
 static void TeseoConsumerTask(void const * argument);
+static void CheckAltitudeFn(void const * argument);
 
 #ifndef USE_STM32L0XX_NUCLEO
 static void GNSSData_Mutex_Init(void);
 static void Console_Parse_Task_Init(void);
+static void Check_Altitude_Task_Init(void);
+
 static void ConsoleParseTask(void const * argument);
+
 
 static void ConsoleRead(uint8_t *string);
 
@@ -247,6 +252,7 @@ int main(void)
   
   /* Create the thread(s) */
   Teseo_Consumer_Task_Init();
+  Check_Altitude_Task_Init();
 
 #ifndef USE_STM32L0XX_NUCLEO
   Console_Parse_Task_Init();
@@ -283,6 +289,23 @@ static void GNSSData_Mutex_Init(void)
   gnssDataMutexHandle = osMutexCreate(osMutex(mutex1));
 }
 #endif /* USE_STM32L0XX_NUCLEO */
+
+
+/*	
+ * This function creates the task checking the altitude
+ */
+static void Check_Altitude_Task_Init(void)
+{
+  osThreadDef(checkAltitudeTask, CheckAltitudeFn, osPriorityNormal, 0, CONSUMER_STACK_SIZE);
+
+  checkAltitudeTaskHandle = osThreadCreate(osThread(checkAltitudeTask), NULL);
+  
+  if (checkAltitudeTaskHandle == NULL)
+  {
+    GNSS_IF_ConsoleWrite((uint8_t *)"Failed to create altitude check task");
+  }
+}
+
 
 /*	
  * This function creates the task reading the messages coming from Teseo
@@ -526,6 +549,18 @@ static void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 3, 0);
 }
 #endif /* USE_STM32L0XX_NUCLEO */
+
+
+/* CheckAltitudeFn */
+void CheckAltitudeFn(void const * argument)
+{
+  for(;;)
+  {
+    HAL_GPIO_WritePin(PORT_C, PIN_PC2, GPIO_PIN_SET);
+    GNSS_DATA_AssertAltitude(&GNSSParser_Data);
+    HAL_GPIO_WritePin(PORT_C, PIN_PC2, GPIO_PIN_RESET);
+  }
+}
 
 
 /* TeseoConsumerTask function */
