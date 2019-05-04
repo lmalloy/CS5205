@@ -77,11 +77,25 @@ extern "C" {
  */
   
 /**
- * @brief  alerts operator if altitude is out of order
+ * @brief  alerts operator if altitude is out of spec
  * @param  pGNSSParser_Data Handler of the GNSS data
  * @retval None
  */
-void GNSS_DATA_AssertAltitude(GNSSParser_Data_t *pGNSSParser_Data);
+void GNSS_DATA_AlertAltitude(GNSSParser_Data_t *pGNSSParser_Data);
+
+/**
+ * @brief  alerts operator if DOP is out of spec
+ * @param  pGNSSParser_Data Handler of the GNSS data
+ * @retval None
+ */
+void GNSS_DATA_AlertDOP(GNSSParser_Data_t *pGNSSParser_Data);
+
+/**
+ * @brief  alerts operator if speed over ground is out of spec
+ * @param  pGNSSParser_Data Handler of the GNSS data
+ * @retval None
+ */
+void GNSS_DATA_AlertGndSpeed(GNSSParser_Data_t *pGNSSParser_Data);
 
 /**
  * @brief  This function sends a command to the GNSS module.

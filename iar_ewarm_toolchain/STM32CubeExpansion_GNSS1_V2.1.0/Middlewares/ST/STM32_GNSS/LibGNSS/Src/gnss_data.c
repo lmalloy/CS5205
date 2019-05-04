@@ -70,31 +70,59 @@ static uint8_t gnssCmd[CMD_SZ];
 
 /* Public functions ----------------------------------------------------------*/
 
-/* Checks if the system is at specified altitude, puts to console result */
-void GNSS_DATA_AssertAltitude(GNSSParser_Data_t *pGNSSParser_Data)
+/* Checks if the system is at specified altitude, result to console via UART */
+void GNSS_DATA_AlertAltitude(GNSSParser_Data_t *pGNSSParser_Data)
 {
   float64_t altitude_ = pGNSSParser_Data->gpgga_data.xyz.alt;
-  /*
-  (void)snprintf((char *)msg, MSG_SZ, "Altitude:\t\t[ %.2f%c ]\n\r",
-                   pGNSSParser_Data->gpgga_data.xyz.alt,
-                   (pGNSSParser_Data->gpgga_data.xyz.mis + 32U));
-  */
-  //(void)snprintf((char *)msg, MSG_SZ, "Altitude:\t\t[ %.2f ]\n\r", altitude_);
   
-  //GNSS_IF_ConsoleWrite(msg);
-  
-  if(altitude_ > 480.00)
+  if(altitude_ > 486.4)
   {
-    (void)snprintf((char *)msg, MSG_SZ, "Operator: Aircraft altitude in excess\n\r");
+    (void)snprintf((char *)msg, MSG_SZ, "Operator: Aircraft entering 500ft FAA restricted airspace\n\r");
     GNSS_IF_ConsoleWrite(msg);
   }
   
-  else if(altitude_ < 350.00)
+  else if(altitude_ < 334.00)
   {
     (void)snprintf((char *)msg, MSG_SZ, "Operator: Aircraft below common Rolla Elevation\n\r");
     GNSS_IF_ConsoleWrite(msg);
   }
 }
+
+
+/* Checks if the system is recieving accurate gnss position data, puts to console result */
+void GNSS_DATA_AlertDOP(GNSSParser_Data_t *pGNSSParser_Data)
+{
+  //float64_t hdop_ = pGNSSParser_Data->gsa_data.hdop;
+  //float64_t vdop_ = pGNSSParser_Data->gsa_data.vdop;
+  float64_t pdop_ = pGNSSParser_Data->gsa_data.pdop;
+  float64_t pos_acc_ = pGNSSParser_Data->gpgga_data.acc;
+
+  if(pdop_ > 1.8)
+  {
+    (void)snprintf((char *)msg, MSG_SZ, "Operator: GNSS PDOP above 1.8\n\r");
+    GNSS_IF_ConsoleWrite(msg);
+  }
+  
+  else if(pos_acc_ > 1.0)
+  {
+    (void)snprintf((char *)msg, MSG_SZ, "Operator: GNSS 'position accuracy' above 1.0\n\r");
+    GNSS_IF_ConsoleWrite(msg);
+  }
+}
+
+
+/* Checks if the system is at specified altitude, puts to console result */
+void GNSS_DATA_AlertGndSpeed(GNSSParser_Data_t *pGNSSParser_Data)
+{
+  float64_t speed_ = pGNSSParser_Data->gprmc_data.speed;
+  
+  if(speed_ > 26.0692)
+  {
+    (void)snprintf((char *)msg, MSG_SZ, "Operator: Speed over ground above 30 mph\n\r");
+    GNSS_IF_ConsoleWrite(msg);
+  }
+}
+
 
 /* Sends a command to the GNSS module. */
 void GNSS_DATA_SendCommand(void *pHandle, uint8_t *pCommand)

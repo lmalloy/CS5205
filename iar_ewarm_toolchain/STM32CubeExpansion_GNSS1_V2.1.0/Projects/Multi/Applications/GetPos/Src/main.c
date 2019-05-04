@@ -146,17 +146,22 @@
 //#define CONSUMER_STACK_SIZE 512
 //#else
 #define CONSUMER_STACK_SIZE 1024
+#define GNSS_TASK_STACK_SIZE 256
 //#endif /* USE_STM32L0XX_NUCLEO */
 
 #define PIN_PA0         GPIO_PIN_0
 #define PIN_PA1         GPIO_PIN_1
 #define PIN_PA4         GPIO_PIN_4
 #define PIN_PA5         GPIO_PIN_5
+#define PIN_PB0         GPIO_PIN_0
 #define PIN_PC0         GPIO_PIN_0
 #define PIN_PC1         GPIO_PIN_1
 #define PIN_PC2         GPIO_PIN_2
 #define PIN_PC3         GPIO_PIN_3
+#define PIN_PC10        GPIO_PIN_10
+#define PIN_PC12        GPIO_PIN_12
 #define PORT_A          GPIOA
+#define PORT_B          GPIOB
 #define PORT_C          GPIOC
 
 /* Global variables ----------------------------------------------------------*/
@@ -173,6 +178,8 @@ osMutexId gnssDataMutexHandle;
 osThreadId teseoConsumerTaskHandle;
 osThreadId consoleParseTaskHandle;
 osThreadId checkAltitudeTaskHandle;
+osThreadId checkDOPTaskHandle;
+osThreadId checkGndSpeedTaskHandle;
 
 /* Private variables ---------------------------------------------------------*/
 
@@ -192,12 +199,17 @@ static void Console_Mutex_Init(void);
 
 static void Teseo_Consumer_Task_Init(void);
 static void TeseoConsumerTask(void const * argument);
-static void CheckAltitudeFn(void const * argument);
+static void CheckAltitudeTask(void const * argument);
+static void CheckDOPTask(void const * argument);
+static void CheckGndSpeedTask(void const * argument);
 
 #ifndef USE_STM32L0XX_NUCLEO
 static void GNSSData_Mutex_Init(void);
 static void Console_Parse_Task_Init(void);
 static void Check_Altitude_Task_Init(void);
+static void Check_DOP_Task_Init(void);
+static void Check_Gnd_Speed_Task_Init(void);
+
 
 static void ConsoleParseTask(void const * argument);
 
@@ -236,7 +248,7 @@ int main(void)
 
   GPIO_Config();
 
-  /* Single instance for the GPS driver */
+  /* Single instance for the GNSS driver */
 #if (configUSE_I2C == 1)
   GNSS_I2C_Init();
   GNSS_Init(&pGNSS, GNSS_BUS_I2C);
@@ -253,6 +265,9 @@ int main(void)
   /* Create the thread(s) */
   Teseo_Consumer_Task_Init();
   Check_Altitude_Task_Init();
+  Check_DOP_Task_Init();
+  Check_Gnd_Speed_Task_Init();
+  
 
 #ifndef USE_STM32L0XX_NUCLEO
   Console_Parse_Task_Init();
@@ -296,13 +311,43 @@ static void GNSSData_Mutex_Init(void)
  */
 static void Check_Altitude_Task_Init(void)
 {
-  osThreadDef(checkAltitudeTask, CheckAltitudeFn, osPriorityNormal, 0, CONSUMER_STACK_SIZE);
+  osThreadDef(checkAltitudeTask, CheckAltitudeTask, osPriorityNormal, 0, GNSS_TASK_STACK_SIZE);
 
   checkAltitudeTaskHandle = osThreadCreate(osThread(checkAltitudeTask), NULL);
   
   if (checkAltitudeTaskHandle == NULL)
   {
-    GNSS_IF_ConsoleWrite((uint8_t *)"Failed to create altitude check task");
+    GNSS_IF_ConsoleWrite((uint8_t *)"Failed to create altitude check task\n\r");
+  }
+}
+
+/*	
+ * This function creates the task checking the system dilution of precision
+ */
+static void Check_DOP_Task_Init(void)
+{
+  osThreadDef(checkDOPTask, CheckDOPTask, osPriorityNormal, 0, GNSS_TASK_STACK_SIZE);
+
+  checkDOPTaskHandle = osThreadCreate(osThread(checkDOPTask), NULL);
+  
+  if (checkDOPTaskHandle == NULL)
+  {
+    GNSS_IF_ConsoleWrite((uint8_t *)"Failed to create check DOP task\n\r");
+  }
+}
+
+/*	
+ * This function creates the task checking the speed over ground
+ */
+static void Check_Gnd_Speed_Task_Init(void)
+{
+  osThreadDef(checkGndSpeedTask, CheckGndSpeedTask, osPriorityNormal, 0, GNSS_TASK_STACK_SIZE);
+
+  checkGndSpeedTaskHandle = osThreadCreate(osThread(checkGndSpeedTask), NULL);
+  
+  if (checkGndSpeedTaskHandle == NULL)
+  {
+    GNSS_IF_ConsoleWrite((uint8_t *)"Failed to create check ground speed task\n\r");
   }
 }
 
@@ -318,7 +363,7 @@ static void Teseo_Consumer_Task_Init(void)
   
   if (teseoConsumerTaskHandle == NULL)
   {
-    GNSS_IF_ConsoleWrite((uint8_t *)"Failed to create teseo task");
+    GNSS_IF_ConsoleWrite((uint8_t *)"Failed to create teseo task\n\r");
   }
 }
 
@@ -365,24 +410,49 @@ static void GPIO_Config(void)
   GPIO_InitStruct.Pin = GPIO_PIN_0;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
   
   /*Configure GPIO pin : PA1 */
   GPIO_InitStruct.Pin = GPIO_PIN_1;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
   
   /*Configure GPIO pin : PA4 */
   GPIO_InitStruct.Pin = GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
   
-  /*Configure GPIO pin : PB0 */
+  /*Configure GPIO pin : PC0 */
   GPIO_InitStruct.Pin = GPIO_PIN_0;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  
+    /*Configure GPIO pin : PC1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  
+    /*Configure GPIO pin : PC2 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  
+    /*Configure GPIO pin : PB0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
   
 #if 1
@@ -390,6 +460,7 @@ static void GPIO_Config(void)
   GPIO_InitStruct.Pin = GNSS_WAKEUP_PIN;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GNSS_WAKEUP_PORT, &GPIO_InitStruct);
 #endif
 }
@@ -551,16 +622,44 @@ static void SystemClock_Config(void)
 #endif /* USE_STM32L0XX_NUCLEO */
 
 
-/* CheckAltitudeFn */
-void CheckAltitudeFn(void const * argument)
+/* Check Altitude Task */
+void CheckAltitudeTask(void const * argument)
 {
+  HAL_GPIO_WritePin(PORT_C, PIN_PC0, GPIO_PIN_RESET);
+  for(;;)
+  {
+    HAL_GPIO_WritePin(PORT_C, PIN_PC0, GPIO_PIN_SET);
+    //HAL_Delay(500);
+    GNSS_DATA_AlertAltitude(&GNSSParser_Data);
+    //HAL_Delay(500);
+    HAL_GPIO_WritePin(PORT_C, PIN_PC0, GPIO_PIN_RESET);
+  }
+}
+
+/* Check DOP Task */
+void CheckDOPTask(void const * argument)
+{
+  HAL_GPIO_WritePin(PORT_C, PIN_PC1, GPIO_PIN_RESET);
+  for(;;)
+  {
+    HAL_GPIO_WritePin(PORT_C, PIN_PC1, GPIO_PIN_SET);
+    GNSS_DATA_AlertDOP(&GNSSParser_Data);
+    HAL_GPIO_WritePin(PORT_C, PIN_PC1, GPIO_PIN_RESET);
+  }
+}
+
+/* Check Ground Speed Task */
+void CheckGndSpeedTask(void const * argument)
+{
+  HAL_GPIO_WritePin(PORT_C, PIN_PC2, GPIO_PIN_RESET);
   for(;;)
   {
     HAL_GPIO_WritePin(PORT_C, PIN_PC2, GPIO_PIN_SET);
-    GNSS_DATA_AssertAltitude(&GNSSParser_Data);
+    GNSS_DATA_AlertGndSpeed(&GNSSParser_Data);
     HAL_GPIO_WritePin(PORT_C, PIN_PC2, GPIO_PIN_RESET);
   }
 }
+
 
 
 /* TeseoConsumerTask function */
@@ -590,10 +689,11 @@ void TeseoConsumerTask(void const * argument)
 
   //GNSS_IF_ConsoleWrite("\n\rTeseo Consumer Task running\n\r");
   GNSS_PARSER_Init(&GNSSParser_Data);
-
+  HAL_GPIO_WritePin(PORT_A, PIN_PA1, GPIO_PIN_RESET);
+  
   for(;;)
   {
-    // toggle pin PA1 on
+    // toggle pin PA# on
     HAL_GPIO_WritePin(PORT_A, PIN_PA1, GPIO_PIN_SET);
     
     gnssMsg = GNSS_Get_Buffer(&pGNSS);
@@ -660,7 +760,7 @@ void TeseoConsumerTask(void const * argument)
 
       }
     }
-    // Toggle pin PA1 off
+    // Toggle pin PA# off
     HAL_GPIO_WritePin(GPIOA, PIN_PA1, GPIO_PIN_RESET);
 
     GNSS_Release_Buffer(&pGNSS, gnssMsg);
@@ -678,6 +778,8 @@ void ConsoleParseTask(void const * argument)
   uint8_t ch;
   
   showCmds();
+  
+  HAL_GPIO_WritePin(GPIOA, PIN_PA0, GPIO_PIN_RESET);
   for(;;)
   {
     // PA0 pin on

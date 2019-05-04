@@ -65,7 +65,7 @@
 
 #define configUSE_I2C 0 /* Set this macro to use I2C bus; UART enabled by default */
 
-#define configUSE_GEOFENCE 0 /* Set this macro to use Geofence */
+#define configUSE_GEOFENCE 1 /* Set this macro to use Geofence */
 #define configUSE_ODOMETER 0 /* Set this macro to use Odometer */
 #define configUSE_DATALOG 0 /* Set this macro to use Datalog */
 #define configUSE_FEATURE ((configUSE_GEOFENCE == 1) || (configUSE_ODOMETER == 1) || (configUSE_DATALOG == 1))
