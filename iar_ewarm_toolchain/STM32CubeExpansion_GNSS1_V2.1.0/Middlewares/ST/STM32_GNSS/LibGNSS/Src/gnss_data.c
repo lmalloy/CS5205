@@ -59,6 +59,9 @@
 #define MSG_SZ (256)
 #define CMD_SZ (90)
 
+#define PORT_A          GPIOA
+#define PIN_PA4         GPIO_PIN_4
+
 /* Private variables ---------------------------------------------------------*/
 
 /* Variable that holds the values got by the tracking process */
@@ -77,14 +80,16 @@ void GNSS_DATA_AlertAltitude(GNSSParser_Data_t *pGNSSParser_Data)
   
   if(altitude_ > 486.4)
   {
-    (void)snprintf((char *)msg, MSG_SZ, "Operator: Aircraft entering 500ft FAA restricted airspace\n\r");
+    (void)snprintf((char *)msg, MSG_SZ, "Operator: Aircraft entering 500ft restricted airspace\n\r");
     GNSS_IF_ConsoleWrite(msg);
   }
   
   else if(altitude_ < 334.00)
   {
     (void)snprintf((char *)msg, MSG_SZ, "Operator: Aircraft below common Rolla Elevation\n\r");
+    HAL_GPIO_WritePin(PORT_A, PIN_PA4, GPIO_PIN_SET);
     GNSS_IF_ConsoleWrite(msg);
+    HAL_GPIO_WritePin(PORT_A, PIN_PA4, GPIO_PIN_RESET);
   }
 }
 
@@ -99,13 +104,13 @@ void GNSS_DATA_AlertDOP(GNSSParser_Data_t *pGNSSParser_Data)
 
   if(pdop_ > 1.8)
   {
-    (void)snprintf((char *)msg, MSG_SZ, "Operator: GNSS PDOP above 1.8\n\r");
+    (void)snprintf((char *)msg, MSG_SZ, "Operator: GNSS PDOP out of spec: %f \n\r", pdop_);
     GNSS_IF_ConsoleWrite(msg);
   }
   
   else if(pos_acc_ > 1.0)
   {
-    (void)snprintf((char *)msg, MSG_SZ, "Operator: GNSS 'position accuracy' above 1.0\n\r");
+    (void)snprintf((char *)msg, MSG_SZ, "Operator: GNSS 'position accuracy' above 1.0: %f \n\r", pos_acc_);
     GNSS_IF_ConsoleWrite(msg);
   }
 }
